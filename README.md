@@ -17,7 +17,7 @@ Clone the repository to your local machine by running the following command:
 
 ```bash
 git clone https://github.com/faizanali1192/todo-backend.git
-yarn migration:up
 yarn install
+yarn migration:up
 yarn dev
 ```
