@@ -1,0 +1,44 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Muhammad Faizan Ali",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && npx tsc",
+    "start": "node dist/index.js",
+    "dev": "npx tsc -w & nodemon dist/index.js",
+    "database:create": "npx sequelize-cli db:create --config ./database-migrations/config.json",
+    "migration:generate": "npx sequelize-cli migration:generate --name --config ./database-migrations/config.json --migrations-path ./database-migrations/migrations",
+    "migration:up": "npx sequelize-cli db:migrate --config ./database-migrations/config.json --migrations-path ./database-migrations/migrations",
+    "migration:down": "npx sequelize-cli db:migrate:undo:all --config ./database-migrations/config.json --migrations-path ./database-migrations/migrations",
+    "migration:status": "npx sequelize-cli db:migrate:status --config ./database-migrations/config.json --migrations-path ./database-migrations/migrations"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.14.10",
+    "bcrypt": "^5.1.1",
+    "blob-stream": "^0.1.3",
+    "body-parser": "^1.20.3",
+    "connect-pg-simple": "^10.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "pdfkit": "^0.15.0",
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "rimraf": "^6.0.1",
+    "sequelize": "^6.37.3",
+    "typescript": "^5.5.3",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/blob-stream": "^0.1.33",
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/cors": "^2.8.17",
+    "@types/express-session": "^1.18.1",
+    "@types/pdfkit": "^0.13.5",
+    "nodemon": "^3.1.4",
+    "sequelize-cli": "^6.6.2"
+  }
+}
