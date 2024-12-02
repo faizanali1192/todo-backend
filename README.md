@@ -1,39 +1,23 @@
-# aqua-royal-backend
+# Todo Backend
 
-### Migration File Overview
+## Prerequisites
 
-**Description**: Adds a new column named `testType` to the `customers` table, and provides a way to revert this change.
+Before you begin, make sure you have the following software installed on your machine:
 
-### Migration File Content
+- **Node.js** (Version 20)
+- **PostgreSQL** (Version 16.3)
 
-```js
-"use strict";
+## Setup Instructions
 
-/** @type {import('sequelize-cli').Migration} */
-module.exports = {
-  async up(queryInterface, Sequelize) {
-    // Add a new column 'testType' to the 'customers' table
-    await queryInterface.addColumn("customers", "testType", {
-      type: Sequelize.ENUM("a", "b", "c"),
-      // You can add other column options here if needed (e.g., allowNull, defaultValue, etc.)
-    });
-  },
+Follow the steps below to set up and run the Todo Backend project:
 
-  async down(queryInterface, Sequelize) {
-    // Remove the 'testType' column from the 'customers' table
-    await queryInterface.removeColumn("customers", "testType");
-  },
-};
+### 1. Clone the Repository
+
+Clone the repository to your local machine by running the following command:
+
+```bash
+git clone https://github.com/faizanali1192/todo-backend.git
+yarn migration:up
+yarn install
+yarn dev
 ```
-
-### Commands for Database Management
-
-#### Create the Database
-
-To create the database based on the configuration file, use the following command:
-
-```sh
-npx sequelize-cli db:create
-```
-
-# todo-backend
